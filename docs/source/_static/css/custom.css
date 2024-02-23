@@ -1,0 +1,13 @@
+html[data-theme="light"] {
+  --pst-color-primary: #ff5008;
+  --pst-color-secondary: #ff5008;
+  --pst-color-accent: #ff5008;
+  --pst-color-inline-code: #1ac1f3;
+}
+
+html[data-theme="dark"] {
+  --pst-color-primary: #ff5008;
+  --pst-color-secondary: #ff5008;
+  --pst-color-accent: #ff5008;
+  --pst-color-inline-code: #1ac1f3;
+}

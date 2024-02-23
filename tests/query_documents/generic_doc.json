@@ -1,0 +1,42 @@
+{
+    "filters": {
+        "time": {
+            "minTime": "2023-10-26T10:46:13.439985Z",
+            "maxTime": "2023-10-26T12:46:13.439989Z"
+        },
+        "geo": {
+            "type": "Polygon",
+            "coordinates": [
+                    [
+                        1.0,
+                        2.0
+                    ],
+                    [
+                        3.0,
+                        -1.0
+                    ],
+                    [
+                        4.0,
+                        -2.0
+                    ],
+                    [
+                        1.0,
+                        2.0
+                    ]
+                ]
+        },
+        "id": [
+            "1234",
+            "5678"
+        ],
+        "fields": {
+            "creditCardProvider": {
+                "eq": "american_express"
+            },
+            "transportationMode": {
+                "eq": "walking"
+            }
+        }
+    },
+    "return": "records"
+}

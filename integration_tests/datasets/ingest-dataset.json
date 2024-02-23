@@ -1,0 +1,63 @@
+{
+  "name": "test-ingest",
+  "description": null,
+  "active": true,
+  "tags": {},
+  "type": "managed",
+  "model": "point",
+  "dataDescription": {
+    "metadataSchema": {
+      "plantHeight": {
+        "type": "number",
+        "nullable": false,
+        "signed": false
+      },
+      "plantIPv4": {
+        "type": "ip",
+        "nullable": true
+      },
+      "plantCultivar": {
+        "type": "enum",
+        "nullable": true,
+        "values": [
+          "broccoli",
+          "brocollini",
+          "brussel sprouts",
+          "cabbage",
+          "cauliflower",
+          "collards"
+        ]
+      }
+    },
+    "boundingBox": null,
+    "minDatetime": null,
+    "maxDatetime": null
+  },
+  "source": {
+    "s3SourceUrl": "s3://dev-ta-platform-dev-datasets/test/integration-tests/100k_with_filter_fields_epoc_2023-11-08/"
+  },
+  "pipeline": {
+    "curationConfiguration": {}
+  },
+  "pii": {
+    "keepPii": false,
+    "piiFields": []
+  },
+  "storage": {
+    "dataStoreType": "dfi",
+    "dataStoreConnectionDetails": {
+      "host": "dev-environment-dfi-1",
+      "port": 8758,
+      "queryTimeout": 3600000
+    }
+  },
+  "destination": {
+    "dataStoreRetentionLength": 0
+  },
+  "permissions": [
+    {
+      "type": "reader",
+      "scope": "all"
+    }
+  ]
+}
