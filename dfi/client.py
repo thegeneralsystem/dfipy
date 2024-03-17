@@ -8,6 +8,7 @@ from dfi.services.identities import Identities
 from dfi.services.info import Info
 from dfi.services.ingest import Ingest
 from dfi.services.query import Query
+from dfi.services.sql import Sql
 from dfi.services.users import Users
 
 
@@ -46,6 +47,7 @@ class Client:
         self.ingest = Ingest(self.conn)
         self.users = Users(self.conn)
         self.query = Query(self.conn)
+        self.sql = Sql(self.query)
 
     def __repr__(self) -> str:
         """Class representation."""
