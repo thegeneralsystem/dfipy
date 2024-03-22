@@ -1,0 +1,114 @@
+/* Timeline  */
+
+.product-timeline .nt-timeline-dot .icon {
+  /* color: white; */
+  background: #ff5008;
+  /* border-radius: 50%; */
+}
+
+
+/* set the background and add a fine line under the header */
+.md-header {
+  color: var(--md-typeset-color);
+  background: var(--md-default-bg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.md-header--shadow {
+  box-shadow: none;
+}
+
+/* set the background of the tabs */
+.md-tabs {
+  color: var(--md-typeset-color);
+  background: var(--md-default-bg-color);
+  border-bottom: 0 !important;
+}
+
+
+.md-search__form {
+  color: var(--md-code-fg-color);
+  background: var(--md-code-bg-color);
+}
+.md-search__input {
+  color: var(--md-code-fg-color);
+}
+.md-search__input::placeholder {
+  color: var(--md-code-fg-color);
+}
+.md-search__input+.md-search__icon {
+  color: var(--md-code-fg-color);
+}
+
+/* add a fine line to the right of the logo */
+.md-logo {
+  padding-right: 16px !important;
+  position: relative;
+}
+.md-logo::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 1px;
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+/* switch the logo to match the theme */
+.md-theme--dark .md-logo,
+[data-md-color-scheme="slate"] .md-logo {
+  background: url('/assets/general-system-light.svg') 0% 50% no-repeat;
+  background-size: 174px 24px;
+}
+.md-theme--dark .md-logo img,
+[data-md-color-scheme="slate"] .md-logo img {
+    visibility: hidden;
+}
+
+.md-theme--light .md-logo,
+[data-md-color-scheme="default"] .md-logo {
+  background: url('/assets/general-system-dark.svg') 0% 50% no-repeat;
+  background-size: 174px 24px;
+}
+.md-theme--light .md-logo img,
+[data-md-color-scheme="default"] .md-logo img {
+    visibility: hidden;
+}
+
+/* hero for the home page */
+.home__hero {
+  padding: 30px 0;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: inherit;
+  text-align: center;
+  line-height: 1.5;
+
+  color: #fff;
+  background: url("https://assets-global.website-files.com/636ce900cf2e67aab6340642/6384f46047e3da3bc18ca2db_Ellipse%20259.webp") 100% 100% no-repeat, url("https://assets-global.website-files.com/636ce900cf2e67aab6340642/6387551ecbf6d8fac401f3a6_Gradient_background-Footer_blend-to-black%203.webp") 0 0 no-repeat, #000;
+}
+.home__hero__container {
+  max-width: 61rem;
+  margin: 0 auto;
+  padding: 2rem 13.6rem;
+}
+.home__hero h1 {
+  margin: 0 0 30px 0;
+  font-family: var(--md-header-font);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.home__hero p {
+  margin: 0 0 30px 0;
+}
+.home__hero a {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  background: var(--gs-orange);
+  padding: 12px 24px;
+}
+.home__content {
+  padding: 0 12.8rem;
+}

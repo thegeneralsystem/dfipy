@@ -1,0 +1,271 @@
+# Changelog
+
+## [9.0.0] - 2024-03-22
+
+### Added
+
+- [DFIS-1147] Enforce typing information on CI/CD build.
+- [DFIS-1744] Add endpoint information to each method.
+- [DFIS-1583] Adds Google Analytics property.
+- [DFIS-1639] Add Prodpad feedback button.
+- [DFIS-1750] Adds Query V1 /v1/query/manage as dfi.query.manage(...).
+
+### Changed
+
+- [DFIS-1746] Rename records_count() -> count().
+- [DFIS-1590] Generate API Reference with Material for MkDocs.
+- [DFIS-1745] Switch linter / formatter to Ruff.
+
+### Removed
+
+- [DFIS-1588] Remove User Guide from dfipy docs.
+- [DFIS-1743] Remove Query V0 from dfipy.
+- [DFIS-1750] Nukes last remnants of Query V0 from dfipy (truncate endpoint) 💥💣💥.
+
+## [8.0.0] - 2024-02-24
+
+### Changed
+
+- [DFIS-1475] Created User Guide to import data from AWS S3.
+- [DFIS-1274] Adds Query V1 endpoints.
+
+### Fixed
+
+- [DFIS-1171] Fixed Import API and added new routes.
+- [DFIS-1553] Progress bar not toggling.
+- [DFIS-1561] Fixes dfipy version reporting 0.0.0 and removes dfi.info methods targeting non-existant endpoints.
+
+## [7.0.0] - 2023-12-20
+
+### Changed
+
+- [DFIS-1169] Updated docs with more examples and fixed typos.
+- [DFIS-1229] Ports Users API & Datasets API integration tests into the dev-env.
+- [DFIS-1370] rename `datasets.get_schema_by_id` to just `datasets.get_schema`.
+- [DFIS-1261] Updates User Guide documentation.
+- [DFIS-1365] Split Users API and Identities API into different services.
+- [DFIS-1316] Renames `get_user_permissions()` to `get_my_permissions() as the permissions are on the identity not the user.
+
+### Fixed
+
+- [DFIS-1028] Updated truncate method with correct URL.
+- [DFIS-1370] Dataset schema as feather returns as a pyarrow schema.
+
+## [6.0.1] - 2023-11-01
+
+### Fixed
+
+- [IN-893] Fix error when querying entities with a polygon and a time filter.
+
+## [6.0.0] - 2023-10-31
+
+### Changed
+
+- [IN-893] Dropped support for Python versions 3.8 and 3.9.
+
+### Fixed
+
+- [IN-893] Fixed some regressions/bugs introduced by recent filter fields change.
+- [IN-893] Updated the version number to reflect recent changes are more than a "patch".
+
+## [5.0.1] - 2023-10-30
+
+### Fixed
+
+- [DFIS-1092] Updated token retrieval process in docs and fixed typo in User's User Guide.
+
+### Added
+
+- [DFIS-1036] Added optional filter_fields arguments to API for records and entities and records_counts.
+
+### Removed
+
+- [DFIS-1036] Parsing unstructured payloads as JSON is for now not supported, attempting to do so will log a warning.
+
+## [5.0.0] - 2023-10-20
+
+### Removed
+
+- [DFIS-956] Remove deprecated Polygons service. Remove old token access instructions.
+
+### Added
+
+- [DFIS-974] Add Datasets & Users API endpoints.
+
+## [4.0.1]
+
+### Fixed
+
+- [DFIS-1007] Readme fixed with latest install method.
+- [DFIS-1009] Capturing JsonDecodeError when truncating an instance by name.
+- [DFIS-115] Progress bar not silenced.
+
+## [4.0.0] - 2023-09-12
+
+### Removed
+
+- [DFIS-996] Deprecating show and analyse extra methods.
+
+## [3.0.1] - 2023-09-11
+
+### Added
+
+- [DFIS-791] Validation for polygon name, for query, save and delete.
+
+### Changed
+
+- [DFIS-992] Replace `X-Api-Token` with `Authorization` following the HTTP Authorization request header.
+
+### Fixed
+
+- [DFIS-993] Force encoding subprocess run to `utf-8`.
+- [DFIS-930] Fixes progress bar showing inconsistent number of results on completion of a query.
+- [DFIS-998] If there was no output from stdout for pip inspect then the extra packages method would throw an error, this was made into
+  a warning for now as an interim solution.
+
+## [3.0.0] - 2023-09-07
+
+### Added
+
+- [DFIS-932] Support for API product version added.
+- [DFIS-899] Sanity check for latitude and longitude ordering in bounding box.
+
+### Changed
+
+- [DFIS-901] Only one way to access the classes, ie. via the Client class. Subclasses are now private.
+- [DFIS-900] Thin wrapper is now separate from the extra methods, that can be installed separately (alongside with their dependencies).
+
+### Fixed
+
+- [DFIS-930] Docstring problem for method `dfi.delete.by_instance`.
+- [DFIS-931] Upgrade Tornado and its dependencies to fix dependency scan vulnerability.
+- [DFIS-305] Entity id filter is ignored when querying entities with bounding box and entity id list filters.
+
+## [2.1.0] - 2023-08-09
+
+### Changed
+
+- [DFIS-891] Improved exception management for the client receiver methods, with parity check from the finish message.
+  This change is backward compatible with `1.0.0 < DFI API < 1.6.0` though reaches full functionality with `1.6.0`.
+
+## [2.0.0] - 2023-08-07
+
+### Changed
+
+- [DFIS-816] New wrappers for DFI API: added classes "Info" and "Ingest". Class polygon expanded with get, save, delete, get_public_state, set_public_state.
+
+### Fixed
+
+- [DFIS-875] Fixing high vulnerability detected in third party library certifi.
+
+## [1.0.2] - 2023-07-06
+
+### Changed
+
+- [DFIS-713] Adds autogenerated docs via sphinx.
+- [DFIS-810] Link to live documentation added to the README.
+
+### Fixed
+
+- [DFIS-741] Code version back in the init and accessible via `help(dfi)`.
+- [DFIS-744] README Updated based on feedback.
+
+## [1.0.1] - 2023-06-16
+
+### Fixed
+
+- [DFIS-705] Progress bar now hidden when `dfi.conn.progress_bar == False` for `dfi.get.history`.
+
+## [1.0.0] - 2023-06-16
+
+### Changed
+
+- [DFIS-638] Refactoring of all classes and getters to remove code repetitions.
+- [DFIS-702] Remove colour column in heatmap aggregation, and remove branca from dependencies.
+
+## [0.1.7] - 2023-06-15
+
+### Fixed
+
+- [DFIS-696] Stream out non-blocking warning instead of blocking warning when no "message" event is passed.
+
+## [0.1.6] - 2023-06-14
+
+### Fixed
+
+- [DFIS-675] Handle events to differentiate "no data are returned" vs. "DFI non responsive" in stream methods.
+
+## [0.1.5] - 2023-06-09
+
+### Fixed
+
+- [DFIS-663] TypeError - Graceful handling of `event.event == 'queryError'`.
+
+## [0.1.4] - 2023-06-09
+
+### Changed
+
+- [DFIS-627] Removed logger customisation to leave it to the developer/pipeline using the library.
+
+### Fixed
+
+- [DFIS-653] Early Exit Handling for Streamed Responses.
+- [DFIS-626] Single responsibility principle applied to all methods.
+- [DFIS-630] From company website domain to registered company name on licence and readme.
+
+## [0.1.3] - 2023-06-05
+
+### Fixed
+
+- [DFIS-625] Fix typos and broken links in README.
+
+## [0.1.2] - 2023-06-05
+
+### Added
+
+- [DFIS-608] Docstrings for every function (todo added for future directions suggestion where needed).
+
+## [0.1.1] - 2023-05-30
+
+### Changed
+
+- [DFIS-579] Library name back to `dfipy`, as `dfi` is too similar to existing `dfio`. Folder name structure remains `dfi`.
+
+## [0.1.0] - 2023-05-30
+
+### Changed
+
+- [DFIS-579] DfiPy to dfi (as the name is not taken on public pypi).
+- [DFIS-592] Updated README.md ready for the public pypi version.
+
+### Added
+
+- [DFIS-592] Added LICENCE.md file.
+
+## [0.0.4] - 2023-05-23
+
+### Added
+
+- [DFIS-579] Added support to retrieve and parse payload.
+
+## [0.0.3] - 2023-05-19
+
+### Added
+
+- [DFIS-569] CONTRIBUTING.md with developer instructions added.
+
+### Fixed
+
+- [DFIS-575] Bugfix: DfiPy version number upgraded from 0.0.0 to 0.0.3.
+
+## [0.0.2] - 2023-05-15
+
+### Added
+
+- [DFIS-552] Integrate changes from pending MR DFI-000 on dfilib source file.
+
+## [0.0.1] - 2023-05-15
+
+### Added
+
+- [DFIS-542] First release.

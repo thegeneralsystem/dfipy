@@ -1,0 +1,81 @@
+{
+  "name": "test-dataset",
+  "description": null,
+  "active": true,
+  "tags": {},
+  "type": "managed",
+  "model": "point",
+  "dataDescription": {
+    "metadataSchema": {
+      "ipv4": {
+        "type": "ip",
+        "nullable": true
+      },
+      "age": {
+        "type": "number",
+        "nullable": true,
+        "signed": false
+      },
+      "home_ipv4": {
+        "type": "ip",
+        "nullable": true
+      },
+      "route_id": {
+        "type": "number",
+        "nullable": false,
+        "signed": false
+      },
+      "credit_card_provider": {
+        "type": "enum",
+        "nullable": true,
+        "values": [
+          "VISA 19 digit",
+          "Discover",
+          "JCB 16 digit",
+          "JCB 15 digit",
+          "VISA 13 digit",
+          "Mastercard",
+          "Maestro",
+          "VISA 16 digit",
+          "American Express",
+          "Diners Club / Carte Blanche"
+        ]
+      },
+      "transportation_mode": {
+        "type": "enum",
+        "nullable": false,
+        "values": ["dwelling", "driving", "cycling", "walking"]
+      }
+    },
+    "boundingBox": null,
+    "minDatetime": null,
+    "maxDatetime": null
+  },
+  "source": {
+    "s3SourceUrl": "s3://dev-ta-platform-dev-datasets/test/integration-tests/100k_with_filter_fields_epoc_2023-11-08/"
+  },
+  "pipeline": {
+    "curationConfiguration": {}
+  },
+  "pii": {
+    "keepPii": false,
+    "piiFields": []
+  },
+  "storage": {
+    "dataStoreType": "dfi",
+    "dataStoreConnectionDetails": {
+      "host": "dev-environment-dfi-1",
+      "port": 8758,
+      "queryTimeout": 3600000
+    }
+  },
+  "destination": {
+    "dataStoreRetentionLength": 0
+  },
+  "permissions": [
+    {
+      "type": "reader",
+      "scope": "all"
+    }
+  ]
+}

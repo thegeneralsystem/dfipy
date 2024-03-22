@@ -1,0 +1,82 @@
+# docs
+docs/source/apidocs
+build
+_build
+.cache
+
+.bash_history
+
+# data
+data/
+
+# IDEs
+.vscode
+.idea
+
+# python caching artefacts
+**/__pycache__
+**/*.pyc
+.ipynb_checkpoints
+
+# data files
+*.csv
+*.geojson
+*.jlb
+*.htmls
+*.osm
+
+# Packaging
+*.egg-info
+dist
+build
+
+# users environments
+dfi-api.env
+.env
+env
+tests.env
+.venv
+venv
+version.env
+
+# testing
+coverage/
+reports/
+htmlcov/
+.coverage
+coverage.xml
+test-reports/
+pylint.txt
+junit.xml
+
+
+# production
+client/build
+server/public
+/bin
+
+# misc artefacts
+.DS_Store
+.ipynb_checkpoints/
+npm-debug.log*
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+
+#sonarqube
+.scannerwork
+.sonar
+
+# End of https://www.gitignore.io/api/osx,python,pycharm+all,jupyternotebooks,visualstudiocode
+tox.ini
+/_data
+.config
+.npm
+test_temp.csv
+data_temp.jlb
+
+# temporary files
+z_*
+secrets.env
+tests.env
